@@ -5,6 +5,7 @@ import saiHero from "~/assets/sai-hero.jpeg";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router";
 
 function Hero() {
     const ref = useRef(null);
@@ -19,46 +20,68 @@ function Hero() {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.6]);
 
     return (
-        <div ref={ref} className="flex items-center justify-center mb-12 hero">
-            <div className="basis-3/5 ml-32">
-                {/* <p className="text-xl font-rubik mb-2 text-gray-700">
-                    <Typewriter text="Hi, my name is" speed={50} />
-                    Hi, my name is
-                </p> */}
-                <h1 className="text-9xl text-black mb-6 font-noto-serif font-extrabold">
+        <div
+            ref={ref}
+            className="flex flex-col-reverse md:flex-row md:items-center justify-center mb-12 hero ml-7 gap-4 h-dvh pr-4 xs:pr-0"
+        >
+            <div className="md:basis-3/5 md:ml-20 lg:ml-32">
+                <h1 className="lg:text-9xl md:text-6xl text-5xl text-black mb-3 md:mb-6 font-noto-serif font-extrabold">
                     Sai Lolla
                 </h1>
-                {/* <h2 className="text-4xl mb-4 font-noto-serif font-bold">
-                        I turn GenAI buzz into working products.
-                    </h2> */}
-                <h2 className="text-4xl mb-4 font-noto-serif font-bold">
+                <h2 className="lg:text-4xl md:text-2xl text-xl mb-4 font-noto-serif font-bold">
                     <Typewriter
                         text="I turn GenAI buzz into working products."
                         speed={50}
                     />
                 </h2>
-                <h3 className="text-xl font-rubik mb-4 text-gray-700">
+                <h3 className="md:text-lg lg:text-xl font-rubik mb-4 text-gray-700">
                     I'm a serial innovator from Goa, <br />
                     who brings your <span className="underline">AI</span>, and{" "}
                     <span className="underline">software ideas</span> to
                     execution.
                 </h3>
 
-                <div className="flex items-center gap-2">
-                    <Button variant="default" size="lg">
-                        Say Hi
-                    </Button>
-                    <Button size="lg" variant="outline">
-                        <FaLinkedin /> Connect on LinkedIn
-                    </Button>
+                <div className="flex flex-col xs:flex-row items-start xs:items-center gap-2">
+                    <Link
+                        to="https://drive.google.com/file/d/1RAyFtzKld-Jbt_pg7E-EKW-fagsGeB7F/view?usp=sharing"
+                        className="cursor-pointer"
+                        target="_blank"
+                    >
+                        <div className="hidden md:block">
+                            <Button variant="default" size="lg">
+                                View Resume
+                            </Button>
+                        </div>
+                        <div className="block md:hidden">
+                            <Button variant="default" size="sm">
+                                View Resume
+                            </Button>
+                        </div>
+                    </Link>
+                    <Link
+                        to="https://www.linkedin.com/in/saisameerlolla/"
+                        className="cursor-pointer"
+                        target="_blank"
+                    >
+                        <div className="hidden md:block">
+                            <Button size="lg" variant="outline">
+                                <FaLinkedin /> Connect on LinkedIn
+                            </Button>
+                        </div>
+                        <div className="block md:hidden">
+                            <Button size="sm" variant="outline">
+                                <FaLinkedin /> Connect on LinkedIn
+                            </Button>
+                        </div>
+                    </Link>
                 </div>
             </div>
-            <div className="heroImage h-dvh basis-2/5">
+            <div className="heroImage w-44 h-44 md:w-full md:h-dvh md:basis-2/5">
                 <motion.img
                     src={saiHero}
                     alt=""
                     style={{ scale }}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-full md:rounded-none"
                 />
             </div>
         </div>

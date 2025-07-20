@@ -27,9 +27,18 @@ const Typewriter = ({ text, speed = 100, delay = 500 }: TypewriterProps) => {
     return (
         <span className="typewriter-text">
             {displayedText}
-            {!doneTyping && <span className="blinking-dot"></span>}
+            {!doneTyping && (
+                <span className="blinking-dot inline-block w-3.5 h-3.5 md:w-5 md:h-5 ml-1 rounded-full bg-black"></span>
+            )}
         </span>
     );
+
+    //     display: inline-block;
+    //   width: 15px;
+    //   height: 15px;
+    //   margin-left: 3px;
+    //   border-radius: 50%;
+    //   background-color: #000;
 };
 
 export default Typewriter;

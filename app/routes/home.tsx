@@ -2,10 +2,6 @@ import type { Route } from "./+types/home";
 import SideLinks from "~/components/SideLinks";
 import Hero from "~/components/Hero";
 import NavBar from "~/components/NavBar";
-import AboutMe from "~/components/AboutMe";
-import Projects from "~/components/Projects";
-import Education from "~/components/Education";
-import ContactMe from "~/components/ContactMe";
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -21,15 +17,17 @@ export default function Home() {
 
             <Hero />
 
-            <AboutMe />
+            {/* <AboutMe /> */}
 
-            <Projects />
+            {/* <Projects /> */}
 
-            <Education />
+            {/* <Education /> */}
 
-            <ContactMe />
+            {/* <ContactMe /> */}
 
-            <SideLinks />
+            <div className="hidden md:block">
+                <SideLinks />
+            </div>
         </main>
     );
 }
