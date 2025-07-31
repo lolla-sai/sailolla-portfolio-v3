@@ -1,5 +1,6 @@
 import type { Route } from "./+types/project";
 import ReactMarkdown from "react-markdown";
+import { Link } from "react-router";
 import remarkGfm from "remark-gfm";
 import NavBar from "~/components/NavBar";
 
@@ -46,9 +47,12 @@ To execute a command on the container
 export default function ProjectBlog() {
     return (
         <main>
-            <NavBar />
+            <div className="mb-24">
+                <NavBar enableAnimation={false} />
+            </div>
 
-            <p className="mt-8 mx-auto prose">
+            <p className="my-8 mx-auto prose">
+                <Link to="/">{"<- Go Back Home!"}</Link>
                 {/* markdown rendering starts */}
                 <div className="mx-4">
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>

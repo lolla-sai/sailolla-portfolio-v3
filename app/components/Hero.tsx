@@ -22,9 +22,9 @@ function Hero() {
     return (
         <div
             ref={ref}
-            className="flex flex-col-reverse md:flex-row md:items-center justify-center mb-12 hero ml-7 gap-4 h-dvh pr-4 xs:pr-0"
+            className="flex flex-col-reverse md:flex-row md:items-center justify-center md:mb-12 hero gap-4 h-dvh pr-4 xs:pr-0 ml-7 md:ml-0"
         >
-            <div className="md:basis-3/5 md:ml-20 lg:ml-32">
+            <div className="md:basis-3/5 md:ml-14 lg:ml-32">
                 <h1 className="lg:text-9xl md:text-6xl text-5xl text-black mb-3 md:mb-6 font-noto-serif font-extrabold">
                     Sai Lolla
                 </h1>

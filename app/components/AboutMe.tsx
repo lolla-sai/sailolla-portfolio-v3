@@ -12,12 +12,12 @@ function AboutMe() {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="rounded-3xl py-12 px-8 border-2 border-gray-600 max-w-5xl mx-auto relative overflow-hidden mb-6"
+            className="rounded-3xl py-12 px-8 md:border-2 border-gray-600 max-w-5xl mx-auto md:mx-16 lg:mx-auto relative overflow-hidden mb-10 md:mb-16 "
         >
-            <h1 className="text-center font-noto-serif font-extrabold text-6xl mb-8">
+            <h1 className="text-center font-noto-serif font-extrabold text-4xl md:text-6xl mb-8">
                 About Me
             </h1>
-            <div className="text-justify mr-auto font-rubik flex flex-col gap-4 text-lg">
+            <div className="text-justify mr-auto font-rubik flex flex-col gap-4 md:text-lg">
                 <p>
                     Hi, my name is Sai. I'm a software engineering professional
                     and a forever student, with a knack for building practical

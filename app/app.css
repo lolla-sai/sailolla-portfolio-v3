@@ -15,6 +15,10 @@
   --breakpoint-xs: 24rem;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @plugin 'tailwind-scrollbar';
 
 html,
@@ -168,6 +172,12 @@ body {
   transform: rotate(-10deg);
 }
 
+@media screen and (max-width: 828px) {
+  #about-me::before {
+    background-size: 120px, 120px, 120px, 220px, 120px;
+  }
+}
+
 
 /* .typewriter-text {
   display: inline-flex;
@@ -199,6 +209,13 @@ body {
   @apply px-10 pt-2.5 relative bg-inherit w-1/2;
 }
 
+.left-container {
+  left: 0;
+}
+.right-container {
+  left: 50%;
+}
+
 .timeline_container::after {
   @apply content-[''] absolute w-7 h-7 right-[-15px] bg-black border-4 border-black top-3.5 rounded z-10;
 }
@@ -224,9 +241,37 @@ body {
 /* The actual content */
 .timeline_content {
   @apply border-black border-2 px-8 py-5 relative rounded-lg;
-  /* border: 2px solid black;
-  padding: 20px 30px;
-  background-color: white;
-  position: relative;
-  border-radius: 6px; */
+}
+
+@media screen and (max-width: 768px) {
+  .timeline::after {
+      left: 31px;
+    }
+  
+    /* Full-width containers */
+    .timeline_container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+      margin-bottom: 0.8rem;
+    }
+  
+    /* Make sure that all arrows are pointing leftwards */
+    .timeline_container::before {
+      left: 55px;
+      border: medium solid black;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent black transparent transparent;
+    }
+  
+    /* Make sure all circles are at the same spot */
+    .left-container::after,
+    .right-container::after {
+      left: 18px;
+    }
+  
+    /* Make all right containers behave like the left ones */
+    .right-container {
+      left: 0%;
+    }
 }

@@ -1,5 +1,7 @@
 import React from "react";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 
 function ContactMe() {
     return (
@@ -14,7 +16,7 @@ function ContactMe() {
 
                     <div className="flex justify-center gap-6">
                         <a
-                            href="mailto:sai@example.com"
+                            href="mailto:saisameer.lolla@gmail.com"
                             className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition"
                         >
                             <Mail className="w-5 h-5" />
@@ -22,13 +24,13 @@ function ContactMe() {
                         </a>
 
                         <a
-                            href="https://github.com/sailolla"
+                            href="https://api.whatsapp.com/send?phone=919284744727&text=Hello%20Sai!%20"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-gray-700 hover:text-black transition"
                         >
-                            <Github className="w-5 h-5" />
-                            <span>GitHub</span>
+                            <FaWhatsapp className="w-5 h-5" />
+                            <span>Whatsapp</span>
                         </a>
 
                         <a
@@ -37,13 +39,13 @@ function ContactMe() {
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-gray-700 hover:text-blue-500 transition"
                         >
-                            <Linkedin className="w-5 h-5" />
+                            <FiLinkedin className="w-5 h-5" />
                             <span>LinkedIn</span>
                         </a>
                     </div>
 
                     <div className="mt-12 text-gray-500 text-sm">
-                        Copyright © 2023 Sai Lolla. All rights reserved.
+                        Copyright © 2025 Sai Lolla. All rights reserved.
                     </div>
                 </div>
             </section>

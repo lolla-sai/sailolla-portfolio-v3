@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-function NavBar() {
+function NavBar({ enableAnimation = true }) {
     const [showNavbar, setShowNavbar] = useState(false);
 
     useEffect(() => {
@@ -15,8 +15,14 @@ function NavBar() {
 
     return (
         <motion.nav
-            initial={{ opacity: 0, y: -20 }}
-            animate={showNavbar ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            initial={enableAnimation ? { opacity: 0, y: -20 } : false}
+            animate={
+                enableAnimation
+                    ? showNavbar
+                        ? { opacity: 1, y: 0 }
+                        : { opacity: 0, y: -20 }
+                    : { opacity: 1, y: 0 }
+            }
             transition={{ duration: 0.4 }}
             className="flex shadow-md bg-white justify-between items-center px-6 py-4  top-0 z-50 fixed left-0 right-0"
         >
@@ -26,18 +32,13 @@ function NavBar() {
 
             <ul className="hidden md:flex gap-6 text-black font-medium text-lg font-rubik">
                 <li>
-                    <a href="#about" className="hover:text-black transition">
+                    <a href="#about-me" className="hover:text-black transition">
                         About
                     </a>
                 </li>
                 <li>
                     <a href="#projects" className="hover:text-black transition">
                         Projects
-                    </a>
-                </li>
-                <li>
-                    <a href="#skills" className="hover:text-black transition">
-                        Skills
                     </a>
                 </li>
                 <li>
